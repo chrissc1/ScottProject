@@ -38,4 +38,14 @@ public class LinearEquation {
         String equation = "y = " + slope() + "x + " + yIntercept();
 
     }
+
+    public void getEquation() {
+        String equation = "y = " + slope() + "x";
+    }
+    public double getDistance() {
+        int ySquared = y2 - y1;
+        int xSquared = x2 - x1;
+        double dst = Math.sqrt(xSquared - ySquared);
+        return dst;
+    }
 }
