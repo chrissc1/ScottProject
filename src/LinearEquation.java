@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LinearEquation {
     private int x1;
     private int y1;
