@@ -18,6 +18,8 @@ public class LinearEquationLogic {
 
     public void getCoordinates() {
         System.out.println("Enter Coordinate 1: ");
+        int coordinate1 = scan.nextInt();
+
 
     }
 
