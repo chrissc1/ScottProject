@@ -24,7 +24,7 @@ public class LinearEquationLogic {
         System.out.println("Enter The second Y value: ");
         yCord2 = scan.nextInt();
         LinearEquation eq = new LinearEquation(xCord1, yCord1, xCord2, yCord2);
-        System.out.println("The two point are:" + "(" + xCord1 + ", " + yCord1 + ")" + "and" + "(" + xCord2 + ", " + yCord2 + ")");
+        System.out.println("The two point are:" + " (" + xCord1 + ", " + yCord1 + ") " + "and" + " (" + xCord2 + ", " + yCord2 + ")");
     }
     public void equation() {
         int top = yCord2 - yCord1;
@@ -42,6 +42,13 @@ public class LinearEquationLogic {
     public void slope() {
         double slope = (double) (yCord2 - yCord1) / (xCord2 - xCord1);
         System.out.println("The slope of this line is: " + slope);
+    }
+
+    public void distance() {
+        int x = (xCord2 - xCord1) * (xCord2 - xCord1);
+        int y = (yCord2 - yCord1) * (yCord2 - yCord1);
+        double distance = Math.sqrt((x + y));
+        System.out.println("The distance between these 2 points is: " + distance);
     }
 
 
