@@ -11,6 +11,8 @@ public class LinearEquationLogic {
     public LinearEquationLogic() {
     }
 
+    LinearEquation idk = new LinearEquation();
+
     public void start() {
     }
 

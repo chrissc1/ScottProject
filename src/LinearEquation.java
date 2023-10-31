@@ -17,6 +17,10 @@ public class LinearEquation {
         coordinate1 = "(" + x1 + ", " + y1 + ")";
         coordinate2 = "(" + x2 + ", " + y2 + ")";
     }
+
+    public LinearEquation() {
+
+    }
     public int getX1() {
         return x1;
     }
