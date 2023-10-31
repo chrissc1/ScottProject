@@ -51,5 +51,10 @@ public class LinearEquationLogic {
         System.out.println("The distance between these 2 points is: " + distance);
     }
 
+    public void yIntercept() {
+        int top = yCord2 - yCord1;
+        int bottom = xCord2 - xCord1;
+        double slopeInt = yCord2 - ((top / bottom) * xCord2);
+    }
 
 }

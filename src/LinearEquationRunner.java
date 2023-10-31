@@ -7,6 +7,7 @@ public class LinearEquationRunner {
         exe.equation();
         exe.slope();
         exe.distance();
+        exe.yIntercept();
     }
 
 }
