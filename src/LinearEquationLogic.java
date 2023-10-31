@@ -12,10 +12,9 @@ public class LinearEquationLogic {
     }
 
     public void start() {
-        getInfo();
     }
 
-    public void getCoordinates() {
+    public void coordinates() {
         System.out.println("Enter The first X value: ");
         xCord1 = scan.nextInt();
         System.out.println("Enter The first Y value: ");
@@ -27,7 +26,7 @@ public class LinearEquationLogic {
         LinearEquation eq = new LinearEquation(xCord1, yCord1, xCord2, yCord2);
         System.out.println("The two point are:" + "(" + xCord1 + ", " + yCord1 + ")" + "and" + "(" + xCord2 + ", " + yCord2 + ")");
     }
-    public void getEquation() {
+    public void equation() {
         int top = yCord2 - yCord1;
         int bottom = xCord2 - xCord1;
         double slopeInt = yCord2 - ((top / bottom) * xCord2);
@@ -40,6 +39,10 @@ public class LinearEquationLogic {
         }
     }
 
+    public void slope() {
+        double slope = (double) (yCord2 - yCord1) / (xCord2 - xCord1);
+        System.out.println("The slope of this line is: " + slope);
+    }
 
 
 }
