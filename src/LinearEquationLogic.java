@@ -1,62 +1,53 @@
 import java.util.Scanner;
 
 public class LinearEquationLogic {
-    private int xCord1;
-    private int xCord2;
-    private int yCord1;
-    private int yCord2;
-
-    Scanner scan = new Scanner(System.in);
-
-    public LinearEquationLogic() {
-    }
-
-    LinearEquation idk = new LinearEquation();
+    private Scanner scanner = new Scanner(System.in);
 
     public void start() {
-    }
+        System.out.println("Welcome to the Linear Equation Calculator!");
 
-    public void coordinates() {
-        System.out.println("Enter The first X value: ");
-        xCord1 = scan.nextInt();
-        System.out.println("Enter The first Y value: ");
-        yCord1 = scan.nextInt();
-        System.out.println("Enter The second X value: ");
-        xCord2 = scan.nextInt();
-        System.out.println("Enter The second Y value: ");
-        yCord2 = scan.nextInt();
-        LinearEquation eq = new LinearEquation(xCord1, yCord1, xCord2, yCord2);
-        System.out.println("The two point are:" + " (" + xCord1 + ", " + yCord1 + ") " + "and" + " (" + xCord2 + ", " + yCord2 + ")");
-    }
-    public void equation() {
-        int top = yCord2 - yCord1;
-        int bottom = xCord2 - xCord1;
-        double slopeInt = yCord2 - ((top / bottom) * xCord2);
-        if ((yCord2 - yCord1) % (xCord2 - xCord1) != 0) {
-            String slope = top + "/" + bottom;
-            System.out.println("The equation of the line between these points is: y = " + slope + " + " + slopeInt );
-        } else {
-            int slope = top / bottom;
-            System.out.println("The equation of the line between these points is: y = " + slope + " + " + slopeInt );
+        while (true) {
+            int x1, y1, x2, y2;
+
+            // Get coordinates from the user.
+            System.out.print("Enter the first X value: ");
+            x1 = scanner.nextInt();
+            System.out.print("Enter the first Y value: ");
+            y1 = scanner.nextInt();
+            System.out.print("Enter the second X value: ");
+            x2 = scanner.nextInt();
+            System.out.print("Enter the second Y value: ");
+            y2 = scanner.nextInt();
+
+            LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
+
+            // Display line information.
+            System.out.println("The two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")");
+            System.out.println("The equation of the line between these points is: " + equation.equation());
+            System.out.println("The slope of this line is: " + equation.slope());
+            System.out.println("The y-intercept of this line is: " + equation.yIntercept());
+            System.out.println("The distance between these points is: " + equation.distance());
+
+            // Ask the user if they want to find a coordinate for a specific x value.
+            System.out.print("Enter an x value : ");
+            double input = scanner.nextInt();
+            String coordinate = equation.coordinateForX(input);
+            System.out.println("Coordinate for x = " + input + ": " + coordinate);
+            System.out.println("Do you want to put in 2 more coordinates? y/n");
+            String meep = scanner.nextLine();
+
+            if (meep.equals("n")) {
+                System.out.println("Bye Bye!");
+            } else if (meep.equals("y")) {
+                start();
+            } else {
+                System.out.println("Invalid answer!");
+            }
         }
     }
 
-    public void slope() {
-        double slope = (double) (yCord2 - yCord1) / (xCord2 - xCord1);
-        System.out.println("The slope of this line is: " + slope);
+    public static void main(String[] args) {
+        LinearEquationLogic logic = new LinearEquationLogic();
+        logic.start();
     }
-
-    public void distance() {
-        int x = (xCord2 - xCord1) * (xCord2 - xCord1);
-        int y = (yCord2 - yCord1) * (yCord2 - yCord1);
-        double distance = Math.sqrt((x + y));
-        System.out.println("The distance between these 2 points is: " + distance);
-    }
-
-    public void yIntercept() {
-        int top = yCord2 - yCord1;
-        int bottom = xCord2 - xCord1;
-        double slopeInt = yCord2 - ((top / bottom) * xCord2);
-    }
-
 }
